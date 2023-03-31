@@ -1,0 +1,4 @@
+minerl
+pyglet==1.4.10
+scikit-learn
+# conda install -c conda-forge libstdcxx-ng

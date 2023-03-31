@@ -1,0 +1,7 @@
+Viewer: 
+    Random trajectory : python3 -m minerl.viewer environment
+    Specific trajectory : python3 -m minerl.viewer environment \
+                            name_of_trajectory
+
+Interactor:
+    python -m minerl.interactor 5656
