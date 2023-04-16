@@ -1,0 +1,2 @@
+2023-04-14 15:47:40 BIPBOOP process_watcher[9131] INFO Process watcher started between parent 9038 and child 9082 
+2023-04-14 15:50:41 BIPBOOP process_watcher[9131] INFO Child is not running anymore, launcher can terminate.

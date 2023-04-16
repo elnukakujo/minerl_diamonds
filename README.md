@@ -4,19 +4,30 @@ This is a personal project using the MineRL library to test reinforcement learni
 
 ## Setup
 
-1. Install Anaconda:
+1. Install gcc and xvfb(used for running scripts):
+
+    sudo apt install gcc
+    sudo apt install xvfb
+
+2. Install JDK 1.8 (Debian system):
+
+    sudo add-apt-repository ppa:openjdk-r/ppa
+    sudo apt-get update
+    sudo apt-get install openjdk-8-jdk
+
+3. Install Anaconda:
     
     Linux: https://docs.anaconda.com/anaconda/install/linux/
 
-2. Create an environment with Python 3.8:
+4. Create an environment with Python 3.8:
 
     conda create -n minecraft python=3.8
 
-3. Install Anaconda library
+5. Install Anaconda library
 
     conda install -c conda-forge libstdcxx-ng
 
-3. Install the libraries form the requirements.txt file:
+6. Install the libraries form the requirements.txt file:
 
     pip install -r requirements.txt
 

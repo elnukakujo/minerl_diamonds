@@ -2,3 +2,6 @@ minerl
 pyglet==1.4.10
 scikit-learn
 xvfbwrapper
+torch
+numpy
+pandas
