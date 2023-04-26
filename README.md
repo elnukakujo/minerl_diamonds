@@ -19,9 +19,9 @@ This is a personal project using the MineRL library to test reinforcement learni
     
     Linux: https://docs.anaconda.com/anaconda/install/linux/
 
-4. Create an environment with Python 3.8:
+4. Create an environment with Python 3.9:
 
-    conda create -n minecraft python=3.8
+    conda create -n minecraft python=3.9
 
 5. Install Anaconda library
 

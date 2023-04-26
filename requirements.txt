@@ -1,7 +1,8 @@
-minerl
+minerl==0.3.7
 pyglet==1.4.10
+tensorflow==2.4.1
+gym
 scikit-learn
 xvfbwrapper
-torch
 numpy
 pandas

@@ -1,23 +1,21 @@
 import os
-import torch
-from torch import nn
+import tensorflow as tf
 
-class BehaviourCloning(nn.Module):
-    def __init__(self, in_channels, action_size):
-        self.in_channels = in_channels
-        self.action_size = action_size
-        self.neurons = nn.Sequential(
-            nn.Conv2d(self.in_channels, 20, (5,5)),
-            nn.ReLU(),
-            nn.MaxPool2d((2,2), stride=(2,2)),
-            nn.Conv2d(20, 50, (5,5)),
-            nn.ReLU(),
-            nn.MaxPool2d((2,2), stride=(2,2)),
-            nn.Linear(in_features=800, out_features=500),
-            nn.ReLU(),
-            nn.Linear(in_features=500, out_features=self.action_size),
-            nn.Sigmoid()
-        )
-    
-    def forward(self, x):
-        output = self.neurons(x)
+
+class ImitationLearning():
+    def __init__(self, input_size, output_size):
+        self.neurons = tf.keras.models.Sequential()
+        self.neurons.add(tf.keras.layers.Rescaling(1./255, input_shape=(64, 64, 3)))
+        self.neurons.add(tf.keras.layers.Conv2D(input_size, (3, 3), activation='relu'))
+        self.neurons.add(tf.keras.layers.MaxPooling2D((2, 2)))
+        self.neurons.add(tf.keras.layers.Conv2D(input_size*2, (3, 3), activation='relu'))
+        self.neurons.add(tf.keras.layers.MaxPooling2D((2, 2)))
+        self.neurons.add(tf.keras.layers.Conv2D(input_size*2, (3, 3), activation='relu'))
+        self.neurons.add(tf.keras.layers.GlobalAveragePooling2D())
+        self.neurons.add(tf.keras.layers.Dense(input_size*2, activation='relu'))
+        self.neurons.add(tf.keras.layers.Dropout(.5))
+        self.neurons.add(tf.keras.layers.Dense(input_size, activation='softmax'))
+        self.neurons.add(tf.keras.layers.Dense(output_size, activation='softmax'))
+
+    def compile(self,**kwargs):
+        return self.neurons.compile(**kwargs)
