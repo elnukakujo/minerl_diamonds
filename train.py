@@ -24,11 +24,13 @@ model.neurons.load_weights('./checkpoints/my_checkpoint')
 
 model.neurons.save_weights('./checkpoints/my_checkpoint')"""
 
-idx = 16
+print(model.neurons.summary())
+
+"""idx = 16
 
 output = model.neurons.predict(tf.expand_dims(x_val[idx], axis=0))[0]
 
 print(output)
 print(y_val.iloc[idx])
 print(np.argmax(output))
-print(y_val.iloc[idx].argmax())
+print(y_val.iloc[idx].argmax())"""
